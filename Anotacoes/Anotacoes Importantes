@@ -1,0 +1,10 @@
+//Video 05
+
+O jpa repository é do spring data, que acessa banco de dados e usa entidades para isso;
+Nos services contem as regras de negocio;
+o Flayway serve para fazer a migração do banco de dados;
+
+//Video 06
+Quando for criar um projeto dom 0, primeiro cria o repositorio no github,depois tem que inicializar o projeto como se fosse um projeto git, -- git init, depois é necessãrio associar o repositorio git remoto com o git local, -- git remote add origin https:dogit , depois para sincronizar, faço o -- git pull origin master da aplicação pra baixar pra minha máquina. Depois só dar add, commit, e push origin master.
+
+
