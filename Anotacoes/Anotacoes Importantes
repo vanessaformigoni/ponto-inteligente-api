@@ -5,6 +5,17 @@ Nos services contem as regras de negocio;
 o Flayway serve para fazer a migração do banco de dados;
 
 //Video 06
-Quando for criar um projeto dom 0, primeiro cria o repositorio no github,depois tem que inicializar o projeto como se fosse um projeto git, -- git init, depois é necessãrio associar o repositorio git remoto com o git local, -- git remote add origin https:dogit , depois para sincronizar, faço o -- git pull origin master da aplicação pra baixar pra minha máquina. Depois só dar add, commit, e push origin master.
+Quando for criar um projeto do 0, primeiro cria o repositorio no github,depois tem que inicializar o projeto como se fosse um projeto git, -- git init, depois é necessãrio associar o repositorio git remoto com o git local, -- git remote add origin https:dogit , depois para sincronizar, faço o -- git pull origin master da aplicação pra baixar pra minha máquina. Depois só dar add, commit, e push origin master.
 
+//Video 09
+Aqui talvez tenham informações sobre o porque o TRAVIS CI nâo funciona. Voltar depois.
+
+//Video 10
+Enums sâo dados estáticos que muito dificilmente serão alterados. Entâo não há a necessidade de criar elementos no BD;
+ROLE_algumacoisa é por causa do spring security;
+FechTypeLazy, permite quando você for carregar uma empressa, não carregue todos funcionarios;
+O Cascade all é pra excluir ou exercutar todas as operações nos funcionarios que são dependentes de uma empresa;
+Metodo @Transiente, é um metodo que não esta relacionado com o mapeamento com o BD, o JPA deve ignorar (mais pra frente eu entenderei);
+Eager pois sempre que carregar os dados do funcionario, quero saber os dados da empresa.
+A data ele colocou um @ temporal.timestamp pra saber a data e local que ocorreu o evento.
 
