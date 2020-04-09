@@ -19,3 +19,13 @@ Metodo @Transiente, é um metodo que não esta relacionado com o mapeamento com 
 Eager pois sempre que carregar os dados do funcionario, quero saber os dados da empresa.
 A data ele colocou um @ temporal.timestamp pra saber a data e local que ocorreu o evento.
 
+//Video 11
+Vamos usar o framework flyway será usado pra criar, gerenciar e migrar as tabelas no banco de dados.
+No banco é Bigint e no java Long 
+No banco ẽ varchar e no java String
+No banco é Datetime e no java Date
+No banco é float e no java float
+No banco é decimal e no java BigDecimal
+
+
+
