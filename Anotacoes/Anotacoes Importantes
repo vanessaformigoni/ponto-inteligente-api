@@ -27,5 +27,8 @@ No banco é Datetime e no java Date
 No banco é float e no java float
 No banco é decimal e no java BigDecimal
 
+//Video 12
+Quando for fazer query que estiver associada a outra entidade, ai é necessário escrever a propria query (com o jpql nesse caso).
+
 
 
