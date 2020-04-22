@@ -29,6 +29,12 @@ No banco é decimal e no java BigDecimal
 
 //Video 12
 Quando for fazer query que estiver associada a outra entidade, ai é necessário escrever a propria query (com o jpql nesse caso).
+Para fazer testes relacionados a bancos, será usado o banco em h2.
+Pageable retorna os resultados paginado.
+
+//Video 13
+Nos métodos de testes unitários, as classes sempre serao void, pois não irão retornar nada, afinal ninguém as chamará, da mesma forma que os argumentos também serão vazios, haja vista que ninguém irá enviar argumentos. Então, se precisar de argumentos, terão que ser variáveis da classe de teste.
+
 
 
 
