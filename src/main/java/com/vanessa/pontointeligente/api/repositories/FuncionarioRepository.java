@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.vanessa.pontointeligente.api.entities.Funcionario;
 
 @Transactional(readOnly=true)
-interface FuncionarioRepository extends JpaRepository<Funcionario, Long> {
+public interface FuncionarioRepository extends JpaRepository<Funcionario, Long> {
 	
 	Funcionario findByCpf(String cpf);
 	
