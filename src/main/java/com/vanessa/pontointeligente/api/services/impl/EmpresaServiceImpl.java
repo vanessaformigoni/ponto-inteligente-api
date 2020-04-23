@@ -5,11 +5,13 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.vanessa.pontointeligente.api.entities.Empresa;
 import com.vanessa.pontointeligente.api.repositories.EmpresaRepository;
 import com.vanessa.pontointeligente.api.services.EmpresaService;
 
+@Service
 public class EmpresaServiceImpl implements EmpresaService{
 
 	@Autowired
@@ -18,7 +20,7 @@ public class EmpresaServiceImpl implements EmpresaService{
 	private static final Logger log = LoggerFactory.getLogger(EmpresaServiceImpl.class);
 	
 	@Override
-	public Optional<Empresa> buscaPorCnpj(String cnpj) {
+	public Optional<Empresa> buscarPorCnpj(String cnpj) {
 		log.info("Buscando uma empresa pelo CNPJ {}",cnpj);
 		return Optional.ofNullable(empresaRepository.findByCnpj(cnpj));
 		
