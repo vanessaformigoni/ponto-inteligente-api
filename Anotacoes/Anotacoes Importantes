@@ -31,6 +31,7 @@ No banco é decimal e no java BigDecimal
 Quando for fazer query que estiver associada a outra entidade, ai é necessário escrever a propria query (com o jpql nesse caso).
 Para fazer testes relacionados a bancos, será usado o banco em h2.
 Pageable retorna os resultados paginado.
+Lembrar que repositorios são interfaces (Nesse casoo).
 
 //Video 13
 Nos métodos de testes unitários, as classes sempre serao void, pois não irão retornar nada, afinal ninguém as chamará, da mesma forma que os argumentos também serão vazios, haja vista que ninguém irá enviar argumentos. Então, se precisar de argumentos, terão que ser variáveis da classe de teste.
@@ -38,6 +39,40 @@ Nos métodos de testes unitários, as classes sempre serao void, pois não irão
 //Video 14
 Nesse modelo, ele usa uma forma diferente, ele não implementa direto no service como estou acostumada. Ele cria a interface service, com os metodos que ela deve conter e depois e cria o serviceImpl, que extende a service e de fato implementa os metodos. O uso de interface é recomendado pois é uma boa pratica de OO e mantem o código mais bem estruturado. Para criar um serviço, precisamos anotar com @Service. 
 
+//Video 15
+Nos testes, o que uma classe testada for usar, ex repository, voce deve mockar pra não ser executado.
 
+//Video 17
+O controller é quem expoe a api para ser consumida por aplicações client. A aplicação se tornará uma aplicação WEB. Preciso ter o tomcat para executala. Dto e validação do lado do servidor. Pra isso o hibernate validator. Quando a dependencia do spring boot security é adicionado, ele habilita a autenticação basic. Qualquer acesso a qualquer serviço o SS barra. Ele pede a autendicação.
+
+A biblioteca Hibernate Validator, em conjunto com o JPA fornecem uma solução completa para validação baseada em anotações, onde basta anotarmos os atributos de nossas
+entidades​ ​ ou​ ​ DTOs​ ​ conforme​ ​ necessário. Tais anotações serão executadas assim que a API for chamada, e caso algum dos valores não atendam as regras impostas pelos validadores, um erro será lançado como retorno informando​ ​ a ​ ​ causa​ ​ do​ ​ problema. Ex: @CNPJ​, @CPF.
+Repare nas anotações ‘@NotEmpty’, ‘@CNPJ’, e ‘@Length’, elas são as responsáveis por informar as regras de validação aplicadas para cada campo do DTO, e como suas
+descrições sugerem, elas validam um valor não nulo, CNPJ válido, e tamanho do texto, respectivamente.
+
+Para que a validação seja executada, devemos adicionar em nosso controller a anotação ‘@Valid’, e também fazer uso do ‘BindingResult’, que será responsável por conter o retorno da​ ​ validação.
+
+No DTO que iremos adiconar as regras de validação de Characters e etc..
+
+Tem que anotar com @Restcontroller (para o spring saber que é um end point), RequestMapping (para informar o caminho da api). Quando o metodo post for chamado, 
+ele fara a o cadastro das informações no banco de dados da aplicação.
+
+A ‘@RequestBody’ é uma classe do Spring responsável por converter os dados
+automaticamente​ ​ de​ ​ uma​ ​ requisição​ ​ HTTP​ ​ em​ ​ formato​ ​ Java​ ​ para​ ​ o ​ ​ DTO.
+O ‘ResponseEntity’ é uma classe utilitária também do Spring que nos permite gerenciar as
+requisições​ ​ HTTP,​ ​ por​ ​ isso​ ​ é ​ ​ utilizada​ ​ para​ ​ retornar​ ​ o ​ ​ DTO​ ​ para​ ​ o ​ ​ cliente.
+
+Eu acho que nesse código : public ResponseEntity<Response<CadastroPJDto>> cadastrar(@Valid @RequestBody CadastroPJDto cadastroPJDto,
+			BindingResult result) 
+
+O ‘ResponseEntity’ respoonde OK, 200, o ResponseBody converte os dados da requisao Http e converte na classe CadastroPJDto. BindingResult terá o
+resultado da validação do dto. Caso tenha problema de cpf e tals.
+
+Algumas validações como se o cpf já existe por exemplo, é feito em um novo metodo dentro da classe controller. Isso o valid não tem como saber/fazer.
+
+A senha vai vir do formulario e eu já vou salvar na classe cripitografada.
+
+No controller eu estou persistindo e depois enviando o ok, com um body de informações.
+Criar teste unitário para CadastroControllerPJ
 
 
