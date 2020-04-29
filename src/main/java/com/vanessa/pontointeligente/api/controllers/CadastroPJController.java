@@ -58,7 +58,7 @@ public class CadastroPJController { // esse controller fara cadastro de empresa 
 
 		validarDadosExistentes(cadastroPJDto, result);
 		Empresa empresa = this.converterDtoParaEmpresa(cadastroPJDto); // testar sem o this
-		Funcionario funcionario = this.converterDtoParaFuncionario(cadastroPJDto, result); // entender porque esse passa o result
+		Funcionario funcionario = this.converterDtoParaFuncionario(cadastroPJDto); // entender porque esse passa o result
 
 		if(result.hasErrors()) {
 			log.error("Erro validando o cadastro de PJ: {}", result.getAllErrors());
@@ -71,12 +71,12 @@ public class CadastroPJController { // esse controller fara cadastro de empresa 
 		funcionario.setEmpresa(empresa);
 		this.funcionarioService.persistir(funcionario);
 		
-		response.setData(this.converterCadastroDtoTo(funcionario)); //não entendi pra que isso.
+		response.setData(this.converterCadastroPjDto(funcionario)); //não entendi pra que isso.
 		return ResponseEntity.ok(response);
 		
 	}
 
-	private CadastroPJDto converterCadastroDtoTo(Funcionario funcionario) {
+	private CadastroPJDto converterCadastroPjDto(Funcionario funcionario) {
 		
 		CadastroPJDto cadastroPJDto = new CadastroPJDto();
 		cadastroPJDto.setId(funcionario.getId());
@@ -94,11 +94,10 @@ public class CadastroPJController { // esse controller fara cadastro de empresa 
 	 * Converter os dados do DTO para Funcionario.
 	 * 
 	 * @param cadastroPJDto
-	 * @param result
 	 * @return Funcionario
 	 * @throws NoSuchAlgorithmException
 	 */
-	private Funcionario converterDtoParaFuncionario(CadastroPJDto cadastroPJDto, BindingResult result)
+	private Funcionario converterDtoParaFuncionario(CadastroPJDto cadastroPJDto)
 			throws NoSuchAlgorithmException {
 		Funcionario funcionario = new Funcionario();
 		funcionario.setNome(cadastroPJDto.getNome());
