@@ -66,13 +66,27 @@ Eu acho que nesse código : public ResponseEntity<Response<CadastroPJDto>> cadas
 			BindingResult result) 
 
 O ‘ResponseEntity’ respoonde OK, 200, o ResponseBody converte os dados da requisao Http e converte na classe CadastroPJDto. BindingResult terá o
-resultado da validação do dto. Caso tenha problema de cpf e tals.
+resultado da validação dos dtos e possiveis erros. Caso tenha problema de cpf e tals.
 
 Algumas validações como se o cpf já existe por exemplo, é feito em um novo metodo dentro da classe controller. Isso o valid não tem como saber/fazer.
 
 A senha vai vir do formulario e eu já vou salvar na classe cripitografada.
 
+0O BindingResult armazena o resultado das requisições​.
+
 No controller eu estou persistindo e depois enviando o ok, com um body de informações.
 Criar teste unitário para CadastroControllerPJ
+
+//Video 19
+
+ValorHora, e etc são optional pois eles podem ter valor ou não. Então é mais facil trabalhar com esse objeto nulo usando o optional. E ele tem metodos
+próprios pra tratar os valores nulos.
+
+//Video 20
+
+Quando eu quiser passar uma variável pelo path, preciso anotar com @PathVariable (e não RequestBody).
+MockMvc é a parteWeb, precisamos de um contexto web tbm. Pq do controller ele é web, http. Tem que anotar com @AutoconfigureMOckMvc. Com isso vamos poder criar o
+MockMvc que vai simular o container Web para fazermos requisições​ http.
+No controller, o teste é um pouco diferente, você testa as respostas da requisição.
 
 
