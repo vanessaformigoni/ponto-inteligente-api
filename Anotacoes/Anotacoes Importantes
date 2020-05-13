@@ -87,6 +87,9 @@ próprios pra tratar os valores nulos.
 Quando eu quiser passar uma variável pelo path, preciso anotar com @PathVariable (e não RequestBody).
 MockMvc é a parteWeb, precisamos de um contexto web tbm. Pq do controller ele é web, http. Tem que anotar com @AutoconfigureMOckMvc. Com isso vamos poder criar o
 MockMvc que vai simular o container Web para fazermos requisições​ http.
-No controller, o teste é um pouco diferente, você testa as respostas da requisição.
+No controller, o teste é um pouco diferente, você testa as respostas da requisição. Validar o retorno.
+Com o MockMvc usaremos pra fazer a chamada ao controller.
+
+//Video 21
 
 
