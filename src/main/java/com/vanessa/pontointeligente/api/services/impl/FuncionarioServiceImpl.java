@@ -33,13 +33,13 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 
 	@Override
 	public Optional<Funcionario> buscarPoremail(String email) {
-		log.info("BUscando funcionario pelo email: {}");
+		log.info("BUscando funcionario pelo email: {}",email);
 		return Optional.ofNullable(this.funcionarioRepository.findByEmail(email));
 	}
 	
 	@Override
 	public Optional<Funcionario> buscarPorId(Long id) {
-		log.info("Buscando funcionario pelo id: {}");
+		log.info("Buscando funcionario pelo id: {}",id);
 	return this.funcionarioRepository.findById(id); //funcionou e não sei pq =(
 	}
 	

@@ -68,7 +68,7 @@ public class LancamentoRepositoryTest {
 	@Test
 	public void testBuscarLancamentosPorFuncionarioIdPaginado() {
 		PageRequest page = PageRequest.of(0,10);
-		List<Lancamento> lancamentos = this.lancamentoRepository.findByFuncionarioId(funcionarioId, page);
+		List<Lancamento> lancamentos = this.lancamentoRepository.findByFuncionarioId(funcionarioId); 
 		
 		assertEquals(2, lancamentos.size());
 	}

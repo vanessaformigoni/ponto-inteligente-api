@@ -90,6 +90,23 @@ MockMvc que vai simular o container Web para fazermos requisições​ http.
 No controller, o teste é um pouco diferente, você testa as respostas da requisição. Validar o retorno.
 Com o MockMvc usaremos pra fazer a chamada ao controller.
 
-//Video 21
+//Video 22
+Faremos CRUD
+Apache comons tem uns recursos maneiros pra lidar com Enums.
+@RequestParam é o parametro que voce passa na url como uma query, que a gente add o "?" , e adiciona outros parametros.É opcional, mas pode receber.
+O page vai contar o LancamentoDto dentro dele e vai adicionar as informações de Dto dentro dele.
+Como no post ele não adicionou nenhuma url, então api/lancamentos já serve.
+
+//Video 24
+Adicionar segurança a aplicação.
+
+
+//Video 25
+
+Sâo necessarios as inclusão de duas dependencias para o swagger, o springfox-swagger2 que gera a documentação e o springfox-swagger-ui para a interface gráfica e, ambas devem estar na mesma versão por questões de compatibilidade. O swagger não deve ficar habilitado no ambiente de produção, somente testes, entâo iremos usar a ideia de profiles. Nós iremos setar o profile atual como profile de dev, quando formos subir no heroku pra prod, usaremos outro profile.
+@Configuration = arquivo de configuração deve ter.
+@Profife("dev") = estou dizendo que nessa classe só irá funcionar se eu estiver usando o profile dev definido nos properties.
+@EnableSwagger2 = irá habilitar o swagger na minha aplicação.
+
 
 
