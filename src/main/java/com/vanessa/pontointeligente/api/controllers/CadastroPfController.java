@@ -116,7 +116,7 @@ public class CadastroPfController {
 		this.funcionarioService.buscarPorCpf(cadastroPfDto.getCpf())
 				.ifPresent(func -> result.addError(new ObjectError("Funcionario", "Funcionario já cadastrado.")));
 
-		this.funcionarioService.buscarPoremail(cadastroPfDto.getEmail())
+		this.funcionarioService.buscarPorEmail(cadastroPfDto.getEmail())
 				.ifPresent(func -> result.addError(new ObjectError("Funcionario", "Email já cadastrado.")));
 	}
 	

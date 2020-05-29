@@ -92,7 +92,7 @@ public class FuncionarioController {
 
 		if (!funcionario.getEmail().equals(funcionarioDto.getEmail())) {
 
-			funcionarioService.buscarPoremail(funcionarioDto.getEmail())
+			funcionarioService.buscarPorEmail(funcionarioDto.getEmail())
 					.ifPresent(func -> result.addError(new ObjectError("Email", "Email ja cadastrado.")));
 			funcionario.setEmail(funcionarioDto.getEmail());
 		}

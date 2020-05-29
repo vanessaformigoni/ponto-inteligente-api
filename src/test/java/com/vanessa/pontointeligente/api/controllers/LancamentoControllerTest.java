@@ -3,6 +3,7 @@ package com.vanessa.pontointeligente.api.controllers;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.springframework.security.test.context.support.WithMockUser;
 
 public class LancamentoControllerTest { //fazer depois 
 
@@ -32,8 +33,11 @@ public class LancamentoControllerTest { //fazer depois
 	}
 
 	@Test
+	@WithMockUser(username="admin@admin.com", roles= {"ADMIN"})
 	public void testRemover() {
 		fail("Not yet implemented");
 	}
+	
+	//testar falha de autenticaçãoS
 
 }

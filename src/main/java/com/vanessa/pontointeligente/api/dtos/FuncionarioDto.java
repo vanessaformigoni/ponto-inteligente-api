@@ -40,7 +40,7 @@ public class FuncionarioDto {
 	}
 
 	@Length(min = 3, max = 200, message = "O email não pode ser menor que 5 e nem maior que 200")
-	@NotEmpty(message = "O nome não pode ser vazio")
+	@NotEmpty(message = "O email não pode ser vazio")
 	@Email(message = "Email invalido.")
 	public String getEmail() {
 		return email;

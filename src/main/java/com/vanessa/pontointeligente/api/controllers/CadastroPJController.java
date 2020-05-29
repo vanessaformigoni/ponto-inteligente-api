@@ -137,7 +137,7 @@ public class CadastroPJController { // esse controller fara cadastro de empresa 
 		this.funcionarioService.buscarPorCpf(cadastroPJDto.getCpf())
 				.ifPresent(func -> result.addError(new ObjectError("Funcionario", "CPF já existente")));
 
-		this.funcionarioService.buscarPoremail(cadastroPJDto.getEmail())
+		this.funcionarioService.buscarPorEmail(cadastroPJDto.getEmail())
 				.ifPresent(func -> result.addError(new ObjectError("Funcionario", "Email já existente")));
 
 	}
