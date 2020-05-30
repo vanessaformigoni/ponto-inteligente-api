@@ -118,6 +118,10 @@ Preciso adicionar um arquivo.xml em resources
 @Enablecashing informa ao spring que usaremos cash
 E iremos usar o cash na camada de serviço colocando @Cachable, que diz que o resultado deverá ser armazenado/consultado no cash.
 O @Cashput mantem a consistencia dos dados na na cash hora de atualizar.
+Tentar entender porque precisei
+
+//Video 27
+Não publiquei no Heroku ainda porque quero melhorar mais. Porem irei fazer.
 
 
 
