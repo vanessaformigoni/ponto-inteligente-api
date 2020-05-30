@@ -99,6 +99,8 @@ Como no post ele não adicionou nenhuma url, então api/lancamentos já serve.
 
 //Video 24
 Adicionar segurança a aplicação.
+Para os testes nâo falharem, é necessário adicionar ao controller @WithMockUser, pois agora não será qualquer um que poderá acessar ao endpoint. Com o @WithMockUser
+informa-se que o usuário esta autenticado.
 
 
 //Video 25
@@ -107,6 +109,15 @@ Sâo necessarios as inclusão de duas dependencias para o swagger, o springfox-s
 @Configuration = arquivo de configuração deve ter.
 @Profife("dev") = estou dizendo que nessa classe só irá funcionar se eu estiver usando o profile dev definido nos properties.
 @EnableSwagger2 = irá habilitar o swagger na minha aplicação.
+O flayway e o security não devem ser carregados juntos porque causa conflito.
+localhost:8080/V2/api-docs é o swagger core, porem não da pra entender muito, por isso usamos interface grafica swagger-ui.
+
+//Video 26
+Adicionar ao pom o eh cashe
+Preciso adicionar um arquivo.xml em resources
+@Enablecashing informa ao spring que usaremos cash
+E iremos usar o cash na camada de serviço colocando @Cachable, que diz que o resultado deverá ser armazenado/consultado no cash.
+O @Cashput mantem a consistencia dos dados na na cash hora de atualizar.
 
 
 
