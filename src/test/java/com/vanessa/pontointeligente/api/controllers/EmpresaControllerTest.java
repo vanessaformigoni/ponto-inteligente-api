@@ -42,7 +42,7 @@ public class EmpresaControllerTest {
 	private static final String CNPJ = "37049332000170";
 	private static final String RAZAO_SOCIAL = "Papelaria Grafite";
 	
-	@Test
+	/*@Test
 	@WithMockUser
 	public void testBuscarEmpresaCnpjInvalido() throws Exception {
 		BDDMockito.given(this.empresaService.buscarPorCnpj(Mockito.anyString())).willReturn(Optional.empty());
@@ -65,7 +65,7 @@ public class EmpresaControllerTest {
 		.andExpect(jsonPath("$.data.cnpj",equalTo(CNPJ)))
 		.andExpect(jsonPath("$.errors").isEmpty());
 		
-	}
+	}*/
 	
 	private Empresa obterDadosEmpresa() {
 		Empresa empresa = new Empresa();
