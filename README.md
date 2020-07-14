@@ -3,8 +3,7 @@
 
 Este projeto trata-se de um curso feito pela Udemy. 
 
-Detalhes da API RESTful
-A API RESTful de Ponto Inteligente contém as seguintes características:
+Detalhes da API RESTful "Ponto Inteligente":
 
 - Projeto criado com Spring Boot e Java 8
 - Banco de dados MySQL com JPA e Spring Data JPA
